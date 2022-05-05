@@ -5,13 +5,13 @@ const ec2 = new AWS.EC2({apiVersion: '2016-11-15'});
 
 const instanceId = 'i-0117fa2bb812ac2ec';
 
+
 async function doit () {
 	if (!(await isAlive())) {
 		console.log(await turnOn());
 	} else {
 		console.log('instance is already on');
 	}
-	
 }
 
 async function wait500ms (){
